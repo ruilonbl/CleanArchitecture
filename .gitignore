@@ -1,0 +1,8 @@
+# Arquivos e pastas do Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.tmp
+*.log
