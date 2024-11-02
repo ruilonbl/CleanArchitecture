@@ -1,4 +1,4 @@
-﻿namespace CleanArchMvc.Data
+﻿namespace CleanArchMvc.Infra.Data
 {
     public class Class1
     {
