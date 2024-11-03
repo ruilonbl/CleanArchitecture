@@ -24,7 +24,7 @@ public sealed class Product : Entity
 
     public Product(int id, string name, string description, decimal price, int stock, string image)
     {
-        DomainExeptionValidation.When(id < 0, "Invalid category id");
+        DomainExeptionValidation.When(id < 0, "Invalid product id");
         Id = id;
         ValidateDomain(name, description, price, stock, image);
     }
@@ -49,7 +49,7 @@ public sealed class Product : Entity
         
         DomainExeptionValidation.When(stock < 0, "Invalid stock value");
         
-        DomainExeptionValidation.When(image.Length > 250, "Invalid image, maximum 250 characters.");
+        DomainExeptionValidation.When(image?.Length > 250, "Invalid image, maximum 250 characters.");
 
         Name = name;
         Description = description;
