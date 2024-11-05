@@ -8,7 +8,7 @@ public interface IProductRepository
     
     Task<Product> GetProductByIdAsync(int? id);
     
-    Task<Product> GetProductByCategoryAsync(int? categoryId);
+    Task<Product> GetProductCategoryAsync(int? productId);
     
     Task<Product> CreateProductAsync(Product product);
     
