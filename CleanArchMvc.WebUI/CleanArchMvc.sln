@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Application", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain", "..\CleanArchMvc.Domain\CleanArchMvc.Domain.csproj", "{F594AE63-B83C-4C67-ACBF-BC627068F01C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.IoC", "..\CleanArchMvc.IoC\CleanArchMvc.IoC.csproj", "{36108FD9-2333-4CFE-A219-3A282B3FEC93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Infra.IoC", "..\CleanArchMvc.IoC\CleanArchMvc.Infra.IoC.csproj", "{36108FD9-2333-4CFE-A219-3A282B3FEC93}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Infra.Data", "..\CleanArchMvc.Infra.Data\CleanArchMvc.Infra.Data.csproj", "{10204C00-B8DD-4FFC-A7E3-B7784EBC33AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Domain.Tests", "..\CleanArchMvc.Domain.Tests\CleanArchMvc.Domain.Tests.csproj", "{9D3A2198-1D0E-45DE-A288-6EFF3D17D519}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain.Tests", "..\CleanArchMvc.Domain.Tests\CleanArchMvc.Domain.Tests.csproj", "{9D3A2198-1D0E-45DE-A288-6EFF3D17D519}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
