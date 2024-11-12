@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CleanArchMvc.Application.DTOs;
 using CleanArchMvc.Application.Interfaces;
+using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -21,34 +22,42 @@ namespace CleanArchMvc.Application.Services
             _mapper = mapper;
         }
 
-        public Task CreateProductAsync(ProductDTO product)
+        public async Task CreateProductAsync(ProductDTO productDto)
         {
-            throw new NotImplementedException();
+            var product = _mapper.Map<Product>(productDto);
+            await _repository.CreateProductAsync(product);
         }
 
-        public Task DeleteProductAsync(int? id)
+        public async Task UpdateProductAsync(ProductDTO productDto)
         {
-            throw new NotImplementedException();
+            var product = _mapper.Map<Product>(productDto);
+            await _repository.UpdateProductAsync(product);
         }
 
-        public Task<ProductDTO> GetProductByIdAsync(int id)
+        public async Task DeleteProductAsync(int? id)
         {
-            throw new NotImplementedException();
+            var prodct = await _repository.GetProductByIdAsync(id);
+            await _repository.DeleteProductAsync(prodct);
         }
 
-        public Task<ProductDTO> GetProductCategoryByIdAsync(int id)
+
+        public async Task<ProductDTO> GetProductCategoryByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var product = await _repository.GetProductCategoryAsync(id);
+            return _mapper.Map<ProductDTO>(product);
         }
 
-        public Task<IEnumerable<ProductDTO>> GetProductsAsync()
+        public async Task<ProductDTO> GetProductByIdAsync(int? id)
         {
-            throw new NotImplementedException();
+            var product = await _repository.GetProductByIdAsync(id);
+            return _mapper.Map<ProductDTO>(product);
         }
 
-        public Task UpdateProductAsync(ProductDTO product)
+        public async Task<IEnumerable<ProductDTO>> GetProductsAsync()
         {
-            throw new NotImplementedException();
+            var products = await _repository.GetProductsAsync();
+            return _mapper.Map<IEnumerable<ProductDTO>>(products);
         }
+
     }
 }
