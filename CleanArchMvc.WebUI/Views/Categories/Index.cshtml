@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CleanArchMvc.Application.DTOs.CategoryDTO>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Categories Management";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <hr />
+
+    <!-- Botão de criação -->
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-success">
+            <span class="fas fa-plus"></span> Register New Category
+        </a>
+    </div>
+
+    <!-- Tabela de Categorias -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>
+                            <!-- Botões de Ação -->
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm" title="Edit">
+                                <span class="fas fa-edit"></span> Edit
+                            </a>
+
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm" title="Details">
+                                <span class="fas fa-search"></span> Details
+                            </a>
+
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm" title="Delete">
+                                <span class="fas fa-trash-alt"></span> Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

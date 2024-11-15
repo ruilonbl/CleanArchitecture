@@ -3,11 +3,6 @@ using CleanArchMvc.Application.DTOs;
 using CleanArchMvc.Application.Interfaces;
 using CleanArchMvc.Domain.Entities;
 using CleanArchMvc.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CleanArchMvc.Application.Services
 {
@@ -37,7 +32,7 @@ namespace CleanArchMvc.Application.Services
         public async Task CreateCategoryAsync(CategoryDTO category)
         {
             var categoryEntity = _mapper.Map<Category>(category);
-             await _categoryRepository.CreateCategoryAsync(categoryEntity);
+            await _categoryRepository.CreateCategoryAsync(categoryEntity);
         }
 
         public async Task UpdateCategoryAsync(CategoryDTO category)
